@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.7)  17 NOV 2024 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.7)  17 NOV 2024 19:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,7 +736,31 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.1.0'
 \tcb@cur@hbadness=\count347
 ))
 \c@tcb@cnt@problem=\count348
-) (commands.tex)
+) (commands.tex) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count349
+\lst@gtempboxa=\box129
+\lst@token=\toks53
+\lst@length=\count350
+\lst@currlwidth=\dimen309
+\lst@column=\count351
+\lst@pos=\count352
+\lst@lostspace=\dimen310
+\lst@width=\dimen311
+\lst@newlines=\count353
+\lst@lineno=\count354
+\lst@maxwidth=\dimen312
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count355
+\lst@skipnumbers=\count356
+\lst@framebox=\box130
+) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -744,24 +768,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -799,17 +823,17 @@ LaTeX Font Info:    ... okay on input line 5.
 
 (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
-\scratchdimen=\dimen309
-\scratchbox=\box129
-\nofMPsegments=\count350
-\nofMParguments=\count351
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count352
-\MPscratchDim=\dimen310
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count357
+\scratchdimen=\dimen313
+\scratchbox=\box131
+\nofMPsegments=\count358
+\nofMParguments=\count359
+\everyMPshowfont=\toks54
+\MPscratchCnt=\count360
+\MPscratchDim=\dimen314
+\MPnumerator=\count361
+\makeMPintoPDFobject=\count362
+\everyMPtoPDFconversion=\toks55
 ) (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -818,59 +842,84 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 5.
+Package hyperref Info: Link coloring ON on input line 17.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 22.
+\c@lstlisting=\count363
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 32.
  (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
  (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
  (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+esint on input line 22.
+LaTeX Font Info:    Trying to load font information for U+esint on input line 32.
  (C:\Users\grego\AppData\Local\Programs\MiKTeX\tex/latex/esint\uesint.fd
 File: uesint.fd 
 )
-Overfull \hbox (31.46552pt too wide) in paragraph at lines 22--28
+Overfull \hbox (31.46552pt too wide) in paragraph at lines 52--58
 []\OT1/cmr/m/n/10.95 According to the doc-u-men-ta-tion of numpy, the com-plex-ity of the pinv func-tion is $\OML/cmm/m/it/10.95 O\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 min\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 nm[]; n[]m\OT1/cmr/m/n/10.95 ))$.
  []
 
-<images/comparison.png, id=16, 676.4472pt x 327.3831pt>
+<images/comparison.png, id=20, 676.4472pt x 327.3831pt>
 File: images/comparison.png Graphic file (type png)
 <use images/comparison.png>
-Package pdftex.def Info: images/comparison.png  used on input line 31.
+Package pdftex.def Info: images/comparison.png  used on input line 61.
 (pdftex.def)             Requested size: 234.8775pt x 113.67163pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
 [1
 
-{C:/Users/grego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/comparison.png>] (main.aux)
+{C:/Users/grego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+[2 <./images/comparison.png>] [3] (main.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-11>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3741226F9A21ABAB5659A685B6FB8C1E;405.
+(rerunfilecheck)             Checksum: D9E04311274D176A164792A2AE5EF912;488.
  ) 
 Here is how much of TeX's memory you used:
- 30126 strings out of 474495
- 594089 string characters out of 5743936
- 1937460 words of memory out of 5000000
- 51895 multiletter control sequences out of 15000+600000
- 565525 words of font info for 67 fonts, out of 8000000 for 9000
+ 31936 strings out of 474495
+ 618081 string characters out of 5743936
+ 2052460 words of memory out of 5000000
+ 53670 multiletter control sequences out of 15000+600000
+ 566169 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,6n,110p,585b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (1 page, 157791 bytes).
+ 106i,9n,110p,585b,1540s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/grego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (3 pages, 239971 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 34 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 42 words of extra memory for PDF output out of 10000 (max. 10000000)
 

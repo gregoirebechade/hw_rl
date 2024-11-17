@@ -1,6 +1,18 @@
 \input{preamble}
 \input{format}
 \input{commands}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,  % Police monospace petite
+  frame=lines,                % Cadre autour du code
+  numbers=left,               % Numéros de ligne
+  keywordstyle=\color{blue},  % Couleur des mots-clés
+  commentstyle=\color{green!50!black}, % Couleur des commentaires
+  stringstyle=\color{red},    % Couleur des chaînes
+  breaklines=true,            % Coupe les longues lignes
+}
 
 \begin{document}
 
@@ -17,7 +29,25 @@
 \section{Problem 1: Linear epsilon greedy}
 
 \begin{enumerate}
-    \item q1
+    \item Here is the code of our receive\_reward function with the updates of the covariance matrix. The action is then chosen as the maximizer of the inner product between the estimated $\hat{\theta}$ and the arms.
+
+    \begin{lstlisting}[language=Python]
+        def receive_reward(self, chosen_arm, reward):
+            """
+            update the internal quantities required to estimate the parameter theta using least squares
+            """
+            # update inverse covariance matrix
+            self.cov += np.outer(chosen_arm, chosen_arm) # update the covariance matrix
+            self.invcov = pinv(self.cov) # update the inverse covariance matrix
+        
+            # update b_t
+            self.b_t += reward * chosen_arm
+        
+            self.hat_theta = np.inner(self.invcov, self.b_t) # update the least square estimate
+            self.t += 1
+        \end{lstlisting}
+
+        
     \item q2
     \item According to the documentation of numpy, the complexity of the pinv function is $O(min(n m^2, n^2m))$. In our problem, the matrix is squared, of size $d$ so the complexity is $O(d^3)$.
 This can create problems when facing high-dimensional problems. We have therefore decided to implement a class LinearEpsilonGreedybis, in which we have changed the estimation of $\hat{theta}$. 
@@ -29,7 +59,7 @@ Computing $\hat{\theta}$ has a complexity in $0(d)$, as we only have to compute 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{images/comparison.png}
-    \caption{Comparison of the performances and rime of execution of LinearEpsilonGreedy and the LinearEpsilonGreedy bis, with N=50, T=200 and 20 tries.} 
+    \caption{Comparison of the performances and time of execution of LinearEpsilonGreedy and the LinearEpsilonGreedy bis, with N=50, T=200 and 20 tries.} 
     \label{fig:lin_epsilon_greedy}
 \end{figure}
 
@@ -44,9 +74,57 @@ Computing $\hat{\theta}$ has a complexity in $0(d)$, as we only have to compute 
 
 
 \begin{enumerate}
-    \item q1
-    \item q2
+    \item For the implementation of LinUCB, we have implemented the function $\beta(t,\delta)$ and directly computed the upper confidence born from the course. The arm selected is the one that maximises the following quantity: \\
+    \item $x^T\hat{\theta }^\lambda _t + \left\lVert x\right\rVert _{(B_t^\lambda)^{-1} } \beta(t, \delta) $. 
+    \item The prior on $\theta^*$ is that it follows the law $\mathcal{N}(0, \Sigma^{-1})$. \\
+    
+Let us define : \\
+$\Sigma_t ^{-1} = \Sigma^{-1} + \frac{\sum_{t=1}^{T} A_t^T A_t}{\sigma^2}$ \\
+
+and $\mu_t = \Sigma_t \times (\frac{\sum_{t=1}^{T} A_t^T r_t}{\sigma^2})$
+
+
+The posterior on  $\theta^*$ is  $\mathcal{N}(\mu_t, \Sigma_t)$
     \item q3
 \end{enumerate}
+
+\section{Appendix}
+
+\textbf{Proof of the posterior distribution of $\theta^*$ in LinTS}
+
+
+Let us note  $A_t$, the chosen action at time $t$ and $Y_t = < A_t, \theta^*> + \epsilon_t$ the reward. 
+
+We directly have that, $Y_t \sim \mathcal{N}(A_t (\theta^*) ^T, \sigma^2)$. 
+
+Thanks to Bayes rule, we have : \\
+
+$\mathbb{P}(\theta^* | Y_1, ... , Y_t , A_1, ..., A_t) = \mathbb{P}( Y_1, ... , Y_t , A_1, ..., A_t | \theta^* ) \times \frac{\mathbb{P}(\theta^*)}{\mathbb{P}(Y_1, ... , Y_t , A_1, ..., A_t) } $
+
+The denominator is a constant with respect to $\theta^*$ so :
+
+$\mathbb{P}(\theta^* | Y_1, ... , Y_t , A_1, ..., A_t) \propto \mathbb{P}( Y_1, ... , Y_t , A_1, ..., A_t | \theta^* ) \times {\mathbb{P}(\theta^*)}$ 
+
+But, $\theta^* \sim \mathcal{N}(0, \Sigma)$ and
+
+$\mathbb{P}( Y_1, ... , Y_t , A_1, ..., A_t | \theta^* ) = \Pi_{t=1}^{T} \frac{1}{\sqrt{2  \pi}} exp(\frac{-1}{2 \sigma^2} (A_t {\theta^*}^T -r_t)^2) = (\frac{1}{\sqrt{2  \pi}})^T \times exp(\sum_{t=1}^T\frac{-1}{2 \sigma^2} (A_t {\theta^*}^T -r_t)^2) $
+
+
+$\theta^*$ and $(Y_1, ... , Y_t , A_1, ..., A_t | \theta^*)$ follow normal distributions so  $\theta^* | Y_1, ... , Y_t , A_1, ..., A_t$ also follows a normal distribution.  
+We finally just have to identify the mean ($\mu_t$) and the covariance matrix ($\Sigma_t$) of this distribution. 
+
+\begin{align}
+    log (\mathbb{P}((  \theta^* |Y_1, ... , Y_t , A_1, ..., A_t ))) &= C + \sum_{t=1}^T\frac{-1}{2 \sigma^2} (A_t {\theta^*}^T -r_t)^2 -\frac{1}{2}({\theta^*}^T \Sigma ^{-1} \theta^*)\\
+    & =\frac{-1}{2} ( (\sum_{t=1}^T \frac{(A_t^T {\theta^*}^T \theta^* A_t - 2 r_t A_t{\theta^*}^T + r_t^2)}{\sigma^2}) + {\theta^*}^T \Sigma ^{-1} \theta^*) +C\\
+    & = C + {\theta^* }^T(\frac{1}{\sigma^2}\sum_{t=1}^{T} A_t^T A_t + \Sigma^{-1}) \theta^* - 2 {\theta^* }^T(\frac{\sum_{t=1}^T A_t r_t} {\sigma^2}) -(\frac{r_t}{\sigma})^2\\
+\end{align}
+
+We finally identify $\Sigma_t$ thanks to the quadratic term in $\theta^*$ :
+
+
+$\Sigma_t ^{-1} = \Sigma^{-1} + \frac{\sum_{t=1}^{T} A_t^T A_t}{\sigma^2}$ 
+
+and we have directly $\mu_t = \Sigma_t \times (\frac{\sum_{t=1}^{T} A_t^T r_t}{\sigma^2})$. 
+
 
 \end{document}
