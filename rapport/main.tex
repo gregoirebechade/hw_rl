@@ -29,23 +29,26 @@
 \section{Problem 1: Linear epsilon greedy}
 
 \begin{enumerate}
-    \item Here is the code of our receive\_reward function with the updates of the covariance matrix. The action is then chosen as the maximizer of the inner product between the estimated $\hat{\theta}$ and the arms.
+    \item For LinUCB, here is the code of our receive\_reward function with the updates of the covariance matrix. The action is then chosen as the maximizer of the inner product between the estimated $\hat{\theta}$ and the arms.
 
     \begin{lstlisting}[language=Python]
-        def receive_reward(self, chosen_arm, reward):
-            """
-            update the internal quantities required to estimate the parameter theta using least squares
-            """
-            # update inverse covariance matrix
-            self.cov += np.outer(chosen_arm, chosen_arm) # update the covariance matrix
-            self.invcov = pinv(self.cov) # update the inverse covariance matrix
+
         
-            # update b_t
-            self.b_t += reward * chosen_arm
-        
-            self.hat_theta = np.inner(self.invcov, self.b_t) # update the least square estimate
-            self.t += 1
-        \end{lstlisting}
+  def receive_reward(self, chosen_arm, reward):
+    """
+    update the internal quantities required to estimate the parameter theta using least squares
+    """
+    #update inverse covariance matrix
+    self.cov += np.outer(chosen_arm, chosen_arm) # update the covariance matrix
+    self.invcov = pinv(self.cov) # update the inverse covariance matrix
+
+    #update b_t
+    self.b_t += reward * chosen_arm
+
+    self.hat_theta = np.inner(self.invcov, self.b_t) # update the least square estimate
+    self.t += 1
+    \end{lstlisting}
+
 
         
     \item q2
@@ -75,8 +78,18 @@ Computing $\hat{\theta}$ has a complexity in $0(d)$, as we only have to compute 
 
 \begin{enumerate}
     \item For the implementation of LinUCB, we have implemented the function $\beta(t,\delta)$ and directly computed the upper confidence born from the course. The arm selected is the one that maximises the following quantity: \\
-    \item $x^T\hat{\theta }^\lambda _t + \left\lVert x\right\rVert _{(B_t^\lambda)^{-1} } \beta(t, \delta) $. 
-    \item The prior on $\theta^*$ is that it follows the law $\mathcal{N}(0, \Sigma^{-1})$. \\
+     $x^T\hat{\theta }^\lambda _t + \left\lVert x\right\rVert _{(B_t^\lambda)^{-1} } \beta(t, \delta) $. 
+
+    For the LinTS, we update the parameters as described in q2. We then draw a $\theta^*$ from the posterior distribution and choose the arm that maximizes the inner product between the arm and the sampled $\theta^*$.
+    We provide the code of the get\_action function below.
+    \begin{lstlisting}
+        
+  def get_action(self, arms):
+    theta= np.random.multivariate_normal(self.mu, self.cov)
+    theta=theta/np.linalg.norm(theta)
+    return arms[np.argmax(np.dot(arms, theta))]
+    \end{lstlisting}
+    \item The prior on $\theta^*$ is that it follows the law $\mathcal{N}(0, \Sigma)$. \\
     
 Let us define : \\
 $\Sigma_t ^{-1} = \Sigma^{-1} + \frac{\sum_{t=1}^{T} A_t^T A_t}{\sigma^2}$ \\
