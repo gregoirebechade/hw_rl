@@ -1,31 +1,52 @@
-\documentclass{article}
-
-% Language setting
-% Replace `english' with e.g. `spanish' to change the document language
-\usepackage[french]{babel}
-\usepackage[fleqn]{amsmath} % Aligner les équations à gauche
-
-
-% Set page size and margins
-% Replace `letterpaper' with`a4paper' for UK/EU standard size
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
-
-% Useful packages
-
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{subcaption}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-
-\title{Report Homework RL }
-\author{Alexis MAROUANI - Grégoire BECHADE }
+\input{preamble}
+\input{format}
+\input{commands}
 
 \begin{document}
-\maketitle
 
-\section{Problem 1 Linear Epsilon Greedy}
+\begin{Large}
+    \textsf{\textbf{Stochastic Linear Bandits}}
+    An Empirical Study
+\end{Large}
+
+\vspace{1ex}
+
+\textsf{\textbf{Students:}} \text{Alexis Marouani, Grégoire Béchade}, \\
+\textsf{\textbf{Lecturer:}} \text{Claire Vernade}, Contact me on Slack if anything looks weird, or find my email on my \href{www.cvernade.com}{website} 
+
+\section{Problem 1: Linear epsilon greedy}
+
+\begin{enumerate}
+    \item q1
+    \item q2
+    \item According to the documentation of numpy, the complexity of the pinv function is $O(min(n m^2, n^2m))$. In our problem, the matrix is squared, of size $d$ so the complexity is $O(d^3)$.
+This can create problems when facing high-dimensional problems. We have therefore decided to implement a class LinearEpsilonGreedybis, in which we have changed the estimation of $\hat{theta}$. 
+Instead of estimating $\theta$ through the least square estimator, we decided to estimate it through this estimator: $\hat{\theta} = \sum_{t=1}^{T} \left\langle \theta , A_t\right\rangle A_t$. 
+We didn't manage to find theoretical guarantees about the expected value of this estimator, as $\mathbb{E}(\hat{\theta}) = \sum_{t=1}^{T} \mathbb{E} ( \left\langle \theta , A_t\right\rangle A_t) $, which can't be precised without assumptions on the distribution of $A_t$.
+However, we have tested it on different problems, and it seems to obtain the same results as the one obtained with the least square estimator.
+Computing $\hat{\theta}$ has a complexity in $0(d)$, as we only have to compute scalars products of d-vectors. The figure \ref{fig:lin_epsilon_greedy} underlines the gain in computational time, while the performances are the same.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/comparison.png}
+    \caption{Comparison of the performances and rime of execution of LinearEpsilonGreedy and the LinearEpsilonGreedy bis, with N=50, T=200 and 20 tries.} 
+    \label{fig:lin_epsilon_greedy}
+\end{figure}
 
 
 
+
+
+\end{enumerate}
+
+
+\section{Problem 2: LinUCB and LinTS}
+
+
+\begin{enumerate}
+    \item q1
+    \item q2
+    \item q3
+\end{enumerate}
 
 \end{document}
