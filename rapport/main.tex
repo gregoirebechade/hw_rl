@@ -51,7 +51,17 @@
 
 
         
-    \item q2
+    \item  The task on which we test the algorithm is the following: we have 7 arms, each of them is a 10-dimensional vector with values drawn from a normal distribution. 
+    We choose a long horizon of 1000 rounds to see the convergence of the algorithms, and we run the algorithm 100 times.
+    We have tested the algorithm with different values of $\epsilon$ and the results are presented in the figure \ref{fig:lin_epsilon_greedy}.
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.55\textwidth]{images/lin_epsilon_greedy.png}
+      \caption{Performance of the LinearEpsilonGreedy algorithm with different values of $\epsilon$}
+      \label{fig:lin_epsilon_greedy}
+    \end{figure}
+    This experiment highlight that the algorithm converges to the optimal arm, and that the smaller the value of $\epsilon$, the better the convergence.
+    Compared to the Uniform Random algorithm, the LinearEpsilonGreedy algorithm is a much better baseline as it converges to the optimal arm.
     \item According to the documentation of numpy, the complexity of the pinv function is $O(min(n m^2, n^2m))$. In our problem, the matrix is squared, of size $d$ so the complexity is $O(d^3)$.
 This can create problems when facing high-dimensional problems. We have therefore decided to implement a class LinearEpsilonGreedybis, in which we have changed the estimation of $\hat{\theta}$. 
 Instead of estimating $\theta$ through the least square estimator, we decided to estimate it through this estimator: $\hat{\theta} = \sum_{t=1}^{T} \left\langle \theta , A_t\right\rangle A_t$. 
@@ -61,7 +71,7 @@ Computing $\hat{\theta}$ has a complexity in $0(d)$, as we only have to compute 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/comparison.png}
+    \includegraphics[width=0.7\textwidth]{images/comparison.png}
     \caption{Comparison of the performances and time of execution of LinearEpsilonGreedy and the LinearEpsilonGreedy bis, with N=50, T=200 and 20 tries.} 
     \label{fig:lin_epsilon_greedy}
 \end{figure}
@@ -98,7 +108,15 @@ and $\mu_t = \Sigma_t \times (\frac{\sum_{t=1}^{T} A_t^T r_t}{\sigma^2})$
 
 
 The posterior on  $\theta^*$ is  $\mathcal{N}(\mu_t, \Sigma_t)$
-    \item q3
+    \item We have tested all the algorithms for different values of $K$ and $d$. For each value, we have picked the best algorithm and plotted it on the Fig.\ref{fig:best_models}. 
+    We can observe that the LinTS model stands out of the crowd, being the best in almost every case. 
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{images/best_model.png}
+        \caption{Comparison of the performances of all the models for different values of $K$ and $d$}
+        \label{fig:best_models}
+    \end{figure}
 \end{enumerate}
 
 \section{Appendix}
