@@ -38,7 +38,6 @@
     """
     update the internal quantities required to estimate the parameter theta using least squares
     """
-    #update inverse covariance matrix
     self.cov += np.outer(chosen_arm, chosen_arm) # update the covariance matrix
     self.invcov = pinv(self.cov) # update the inverse covariance matrix
 
@@ -60,7 +59,7 @@
       \caption{Performance of the LinearEpsilonGreedy algorithm with different values of $\epsilon$}
       \label{fig:lin_epsilon_greedy}
     \end{figure}
-    This experiment highlight that the algorithm converges to the optimal arm, and that the smaller the value of $\epsilon$, the better the convergence.
+    This experiment highlights that the algorithm converges to the optimal arm, and that the smaller the value of $\epsilon$, the better the convergence.
     Compared to the Uniform Random algorithm, the LinearEpsilonGreedy algorithm is a much better baseline as it converges to the optimal arm.
     \item According to the documentation of numpy, the complexity of the pinv function is $O(min(n m^2, n^2m))$. In our problem, the matrix is squared, of size $d$ so the complexity is $O(d^3)$.
 This can create problems when facing high-dimensional problems. We have therefore decided to implement a class LinearEpsilonGreedybis, in which we have changed the estimation of $\hat{\theta}$. 
@@ -91,15 +90,14 @@ Computing $\hat{\theta}$ has a complexity in $0(d)$, as we only have to compute 
      $x^T\hat{\theta }^\lambda _t + \left\lVert x\right\rVert _{(B_t^\lambda)^{-1} } \beta(t, \delta) $. 
 
     For the LinTS, we update the parameters as described in q2. We then draw a $\theta^*$ from the posterior distribution and choose the arm that maximizes the inner product between the arm and the sampled $\theta^*$.
-    We provide the code of the get\_action function below.
+    We provide the code of the get\_action function below.\\[0.3cm]
     \begin{lstlisting}
-        
   def get_action(self, arms):
     theta= np.random.multivariate_normal(self.mu, self.cov)
     theta=theta/np.linalg.norm(theta)
     return arms[np.argmax(np.dot(arms, theta))]
     \end{lstlisting}
-    \item The prior on $\theta^*$ is that it follows the law $\mathcal{N}(0, \Sigma)$. \\
+    \item The prior on $\theta^*$ is that it follows the law $\mathcal{N}(0, \Sigma)$ (proof in the Appendix). \\
     
 Let us define : \\
 $\Sigma_t ^{-1} = \Sigma^{-1} + \frac{\sum_{t=1}^{T} A_t^T A_t}{\sigma^2}$ \\
