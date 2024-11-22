@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1731869414 "c:/Users/grego/Documents/code/hw_rl/rapport/main.tex" "main.pdf" "main" 1731869416 0
+["pdflatex"] 1732271119 "c:/Users/grego/Documents/code/hw_rl/rapport/main.tex" "main.pdf" "main" 1732271128 0
   "C:/Users/grego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731867202 113428 a280e18065651d82029025b185cb382a ""
   "C:/Users/grego/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1728661553 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/grego/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1728661555 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -215,13 +215,13 @@
   "C:/Users/grego/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/grego/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/grego/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "c:/Users/grego/Documents/code/hw_rl/rapport/main.tex" 1731869413 6860 f55a3735003491caac765899aaca8214 ""
+  "c:/Users/grego/Documents/code/hw_rl/rapport/main.tex" 1732271115 6861 dd77aa2160ca77509c92f11e8b44b1ba ""
   "commands.tex" 1731850133 1447 1b349ecf0464f9472ea5af918c14ae04 ""
   "format.tex" 1731850133 855 e6f5714a2a2aed0980cdeb3aa5fefa23 ""
   "images/comparison.png" 1731855081 46632 e95a3df8b150083a8ef18999031a9b6e ""
-  "main.aux" 1731869415 1124 08d11d63008f1d328493c40433cbb596 "pdflatex"
-  "main.out" 1731869415 488 d9e04311274d176a164792a2ae5ef912 "pdflatex"
-  "main.tex" 1731869413 6860 f55a3735003491caac765899aaca8214 ""
+  "main.aux" 1732271128 1124 08d11d63008f1d328493c40433cbb596 "pdflatex"
+  "main.out" 1732271128 488 d9e04311274d176a164792a2ae5ef912 "pdflatex"
+  "main.tex" 1732271115 6861 dd77aa2160ca77509c92f11e8b44b1ba ""
   "preamble.tex" 1731850133 1405 e8af56c36adb1b95c7b1ca29e70723ac ""
   (generated)
   "main.aux"

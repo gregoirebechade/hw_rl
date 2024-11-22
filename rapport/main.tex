@@ -53,7 +53,7 @@
         
     \item q2
     \item According to the documentation of numpy, the complexity of the pinv function is $O(min(n m^2, n^2m))$. In our problem, the matrix is squared, of size $d$ so the complexity is $O(d^3)$.
-This can create problems when facing high-dimensional problems. We have therefore decided to implement a class LinearEpsilonGreedybis, in which we have changed the estimation of $\hat{theta}$. 
+This can create problems when facing high-dimensional problems. We have therefore decided to implement a class LinearEpsilonGreedybis, in which we have changed the estimation of $\hat{\theta}$. 
 Instead of estimating $\theta$ through the least square estimator, we decided to estimate it through this estimator: $\hat{\theta} = \sum_{t=1}^{T} \left\langle \theta , A_t\right\rangle A_t$. 
 We didn't manage to find theoretical guarantees about the expected value of this estimator, as $\mathbb{E}(\hat{\theta}) = \sum_{t=1}^{T} \mathbb{E} ( \left\langle \theta , A_t\right\rangle A_t) $, which can't be precised without assumptions on the distribution of $A_t$.
 However, we have tested it on different problems, and it seems to obtain the same results as the one obtained with the least square estimator.
